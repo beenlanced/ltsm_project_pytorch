@@ -16,21 +16,40 @@
 
 This project utilizes `Long Short-Term Memory (LSTM)` neural networks, a variant of Recurrent Neural Networks (RNN) that address the vanishing graident problem and can better capture long-term dependencies in sequential data.
 
-### What this Project Does Specifically
+### What this Project Does Specifically (i.e., the Problem)
+
+For this LSTM example, I imagine that I have two companies: Company A and Company B with five day's worth of stock prices
+
+<p>
+  <img alt="Prediction Data" src="imgs/company_stock_prices.png"/>
+</p>
+
+[img source](https://youtu.be/YCzL96nL7j0)
+
+Given this sequential data, I want to see if I can get the LSTM to remember what happened on Day 1 through Day 4, to see if I can correctly predict what will happen on Day 5.
+
+`The objective`: I run the data from Day 1 through Day 4 through the LSTM to see If I can predict the values for Day 5 for both Company A and Company B.
+
+For Company A, the goal is to predict that the value on Day 5 = 0, and for Company B,the goal is to predict that the value on Day 5 = 1.
+
+### My Solution
 
 I build two Jupyter notebooks,
 
-- Example 1 - Building a Long Short-Term Memory Unit one Component at a time using `PyTorch and Lightning`
-- Example 2 - Building a Long Short-Term Memory Unit using `PyTorch and Lightning`, but taking advantage of `nn.LSTM()`
+- Notebook 1 - Building a Long Short-Term Memory Unit one Component at a time using `PyTorch and Lightning`
+- Notebook 2 - Building a Long Short-Term Memory Unit using `PyTorch and Lightning`, but taking advantage of `nn.LSTM()`
+
+Through multiple trainng campaigns, I reveal through analysis of model prediction loss and prediction values using `TensorBoard` when I have sufficiently trained the LSTM models to achieve good prediction capability. Essentially, determining the appropriate weights and biases for the LSTM model.
+
+In particular, from this project you can see:
+
+- Using `nn.LSTM()` simplifies a lot of the set up of building an LSTM model
+- Using a higher learning rate (e.g., 0.1) reduces the number of epochs needed to train a model considerably.
+- TensorBoard helps to evaluate results visually and keeps records of multiple epoch runs.
 
 ---
 
 ## Objective
-
-The project uses two techninques to visualize the latent space of the [MNIST](https://en.wikipedia.org/wiki/MNIST_database) dataset of handwritten digits:
-
-- [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis)
-- [t-Distributed Stochastic Neighbor Embedding(t-SNE)](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)
 
 The project contains the key elements:
 
@@ -42,7 +61,8 @@ The project contains the key elements:
 - `Python` the standard modules,
 - `PyTorch` Machine Learning framework to train our deep neural network,
 - `Recurrent Neural Network (RNN)`,feedback loop neural networks to process sequential data,
-- `Tensors` mathematical objects that generalize scalars, vectors, and matrices into higher dimensions. A multi-dimensional array of numbers, and
+- `Tensors` mathematical objects that generalize scalars, vectors, and matrices into higher dimensions. A multi-dimensional array of numbers,
+- `TensorBoard` visualization toolkit for TensorFlow that provides tools and visualizations for machine learning experimentation and,
 - `uv` package management including use of `ruff` for linting and formatting
 
 ---
@@ -70,7 +90,7 @@ The Python version used for this project is `Python 3.12` to be compatible with 
 
 Follow the requirements for [Using uv with PyTorch](https://docs.astral.sh/uv/guides/integration/pytorch/)
 
-- Make sure to use python versions `Python 3.9–3.12
+- Make sure to use python versions `Python 3.12`
 - pip version 19.0 or higher for Linux (requires manylinux2014 support) and Windows. pip version 20.3 or higher for macOS.
 - Windows Native Requires Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019
 
@@ -119,9 +139,24 @@ Follow the requirements for [Using uv with PyTorch](https://docs.astral.sh/uv/gu
 
 ## Special Notes
 
-- Including`requirements.txt` file as there are unique considerations when using the `TensorFlow` library. Plus, just in case you run into issues wth the `pyproject.toml` file there is the ability to use the requirements file as well to build the virtual environment.
+- Getting TensorBoard to work with VS code if you are using VS Code
 
-- Running this notebook took approximately 25 minutes to run using an Apple M4 Pro with macOS Sequoia. Depending on the processor(s) that you are running this time will vary.
+  - Get the [VS Code Extension](https://devblogs.microsoft.com/python/python-in-visual-studio-code-february-2021-release/)
+
+  - [additional reference](https://stackoverflow.com/questions/63938552/how-to-run-tensorboard-in-vscode)
+
+- To start a TensorBoard session from VS Code:
+
+  - Open the command palette (Ctrl/Cmd + Shift + P)
+
+    - you may need to add tensorboard to your current virtual environment
+      - in terminal I used `uv add tensorbard` as I use uv to add modules.
+      - Note: all of this should be done for you with this project as all dependencies are in the pyproject.toml file.
+
+  - Search for the command `Python: Launch TensorBoard` and press enter.
+  - You will be able to select the folder where your TensorBoard log files are located. By default, the current working directory will be used. Her, I used the `lightning_logs` directory.
+
+    - VS Code will then open a new tab with TensorBoard and its lifecycle will be managed by VS Code as well. This means that to kill the TensorBoard process all you have to do is close the TensorBoard tab.
 
 ---
 
