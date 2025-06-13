@@ -1,9 +1,3 @@
-# Installation point
-
-### How to install Pytorch using UV
-
-1. Follow directions here: [Using uv with PyTorch](https://docs.astral.sh/uv/guides/integration/pytorch/)
-
 # Building a LSTM Neural Network Using PyTorch
 
 <p>
@@ -14,7 +8,7 @@
 
 ## Project Description
 
-This project utilizes `Long Short-Term Memory (LSTM)` neural networks, a variant of Recurrent Neural Networks (RNN) that address the vanishing graident problem and can better capture long-term dependencies in sequential data.
+This project utilizes `Long Short-Term Memory (LSTM)` neural networks, a variant of Recurrent Neural Networks (RNNs), that address the vanishing graident problem and can better capture long-term dependencies in sequential data.
 
 ### What this Project Does Specifically (i.e., the Problem)
 
@@ -60,7 +54,7 @@ The project contains the key elements:
 - `Long Short-Term Memory (LSTM)` neural network variant of RNN to process sequential data,
 - `Python` the standard modules,
 - `PyTorch` Machine Learning framework to train our deep neural network,
-- `Recurrent Neural Network (RNN)`,feedback loop neural networks to process sequential data,
+- `Recurrent Neural Network (RNN)` feedback loop neural networks to process sequential data,
 - `Tensors` mathematical objects that generalize scalars, vectors, and matrices into higher dimensions. A multi-dimensional array of numbers,
 - `TensorBoard` visualization toolkit for TensorFlow that provides tools and visualizations for machine learning experimentation and,
 - `uv` package management including use of `ruff` for linting and formatting
