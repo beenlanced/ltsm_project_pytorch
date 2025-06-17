@@ -156,7 +156,7 @@ Follow the requirements for [Using uv with PyTorch](https://docs.astral.sh/uv/gu
 
 ### Final Words
 
-Thanks for visting.
+Thanks for visiting.
 
 Give the project a star (⭐) if you liked it or if it was helpful to you!
 
