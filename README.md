@@ -172,7 +172,7 @@ Specifically, I would like to acknowledge:
 
 - [Joshua Starmer - StatQuest](https://youtu.be/YCzL96nL7j0). This project was based off of his Illustrated Guide to Neural Networks and AI course, particularly the LSTM section. Thanks!
 
-- [Hema Kalyan Murapaka](https://www.linkedin.com/in/hemakalyan) and [Benito Martin](https://martindatasol.com/blog) for sharing their README.md templates upon which I have derieved my README.md.
+- [Hema Kalyan Murapaka](https://www.linkedin.com/in/hemakalyan) and [Benito Martin](https://martindatasol.com/blog) for sharing their README.md templates upon which I have derived my README.md.
 
 - The folks at Astral for their UV [documentation](https://docs.astral.sh/uv/)
 
